@@ -19,22 +19,53 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTagTheme {
-                val db = Firebase.firestore
-                val database = Firebase.database
-                val myRef = database.getReference("message")
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+            /** val db = Firebase.firestore
+            val database = Firebase.database
+            val myRef = database.getReference("message")**/
+            MyApp {
+                Maps()
+                MenuButton()
+                TagsMenuButton()
+                FindYourselfIcon()
             }
         }
     }
 }
 
+//
+//
+@Composable
+fun MyApp(content: @Composable () -> Unit){
+// MyApplicationTheme(){
+//      //A surface container using the 'background' color from the theme
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colors.background
+//                ) {
+//                    Greeting("Android")
+//                }
+//
+// }
+}
+
+@Composable
+fun Maps(modifier: Modifier = Modifier){
+    modifier.fillMaxSize()
+}
+
+@Composable
+fun MenuButton(){
+
+}
+
+@Composable
+fun TagsMenuButton(){
+}
+
+@Composable
+fun FindYourselfIcon(){
+
+}
 @Composable
 fun Greeting(name: String) {
     Text(text = "Hello $name!")
@@ -43,7 +74,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    MyTagTheme {
+    MyApp {
         Greeting("Android")
     }
 }

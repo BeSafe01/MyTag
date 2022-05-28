@@ -54,6 +54,7 @@ fun MyGoogleMaps(){
      properties = properties,
      uiSettings = uiSettings
     )
+
     //Marker(position = marker, title = "MyTag", snippet = "Tem algo escrito")
 }
 

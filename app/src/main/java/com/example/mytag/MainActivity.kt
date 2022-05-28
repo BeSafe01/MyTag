@@ -63,6 +63,7 @@ fun MenuButton(){
                 painter = painterResource(id = R.drawable.my_icon),
                 contentDescription = null,
                 tint = Color.White
+
             )
         }
     )

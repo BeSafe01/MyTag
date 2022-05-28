@@ -22,6 +22,7 @@
         android:theme="@style/Theme.MyTag"
         tools:targetApi="31">
 
+
         <!--Maps API-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"

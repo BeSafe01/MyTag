@@ -36,8 +36,12 @@ MyGoogleMaps()
 
 @Composable
 fun MyGoogleMaps(){
+
     //MArker
-    //val marker = LatLng(28.278833,-16.63916)
+//    lateinit var marker : LatLng
+//    marker.latitude = 28.278833
+//    marker.longitude = -16.63916
+
     val properties by remember {
         mutableStateOf(MapProperties(mapType = MapType.HYBRID))//Muda o mapa)
     }
@@ -48,7 +52,7 @@ fun MyGoogleMaps(){
 
     GoogleMap(modifier = Modifier.fillMaxSize(),
      properties = properties,
-    uiSettings = uiSettings
+     uiSettings = uiSettings
     )
     //Marker(position = marker, title = "MyTag", snippet = "Tem algo escrito")
 }

@@ -15,11 +15,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mytag.ui.theme.MyTagTheme
 import com.google.maps.android.compose.*
-import com.google.type.LatLng
 
 class MapsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             MyTagTheme {
                 // A surface container using the 'background' color from the theme
@@ -27,23 +27,19 @@ class MapsActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-MyGoogleMaps()
+                    MyGoogleMaps()
                 }
             }
         }
+
     }
 }
 
 @Composable
 fun MyGoogleMaps(){
 
-    //MArker
-//    lateinit var marker : LatLng
-//    marker.latitude = 28.278833
-//    marker.longitude = -16.63916
-
     val properties by remember {
-        mutableStateOf(MapProperties(mapType = MapType.HYBRID))//Muda o mapa)
+        mutableStateOf(MapProperties(mapType = MapType.NORMAL))//Muda o mapa)
     }
 
     val uiSettings by remember {

@@ -14,43 +14,26 @@ import com.example.mytag.ui.theme.MyTagTheme
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.maps.android.compose.GoogleMap
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            /** val db = Firebase.firestore
-            val database = Firebase.database
-            val myRef = database.getReference("message")**/
-            MyApp {
-                Maps()
-                MenuButton()
-                TagsMenuButton()
-                FindYourselfIcon()
-            }
+            Maps()
+            MenuButton()
+            TagsMenuButton()
+            FindYourselfIcon()
         }
     }
-}
-
-//
-//
-@Composable
-fun MyApp(content: @Composable () -> Unit){
-// MyApplicationTheme(){
-//      //A surface container using the 'background' color from the theme
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colors.background
-//                ) {
-//                    Greeting("Android")
-//                }
-//
-// }
 }
 
 @Composable
 fun Maps(modifier: Modifier = Modifier){
     modifier.fillMaxSize()
+    GoogleMap(
+        Modifier.fillMaxSize()
+    )
 }
 
 @Composable
@@ -63,7 +46,6 @@ fun MenuButton(){
                 painter = painterResource(id = R.drawable.my_icon),
                 contentDescription = null,
                 tint = Color.White
-
             )
         }
     )
@@ -99,15 +81,10 @@ fun FindYourselfIcon(){
     )
 
 }
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    MyApp {
-        Greeting("Android")
-    }
+    Maps()
 }

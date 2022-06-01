@@ -31,6 +31,7 @@ class MapsActivity : ComponentActivity() {
 
        childevent.childEventFirebase {
            database.setValue("Teste")
+
        }
 
         setContent {

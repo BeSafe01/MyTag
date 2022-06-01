@@ -14,11 +14,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mytag.ui.theme.MyTagTheme
-import com.google.maps.android.compose.*
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.FirebaseDatabase
+import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.MapProperties
+import com.google.maps.android.compose.MapType
+import com.google.maps.android.compose.MapUiSettings
+
 
 class MapsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        lateinit var childevent : FirebaseLocation
+        var database = FirebaseDatabase.getInstance().getReference().child("chamados")
+
+       childevent.childEventFirebase {
+           database.setValue("Teste")
+       }
 
         setContent {
             MyTagTheme {
@@ -63,6 +76,6 @@ fun Greeting2(name: String) {
 @Composable
 fun DefaultPreview2() {
     MyTagTheme {
-        Greeting2("Android")
+        MyGoogleMaps()
     }
 }
